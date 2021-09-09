@@ -4,8 +4,8 @@ title: First post using this theme
 description: This blog is my first post using github pages. It has some challenges.
 tags: 
 - general
-- Jekyll
-- Github Pages
+- jekyll
+- github-page
 ---
 
 # Github pages as blogs
@@ -40,5 +40,9 @@ What I need is simple, just to write some post and have tags associated with the
 Then I found qian256 blog. It is a fork form Hyde theme. Simple enough but the most important thing is that it support tags without using the Jekyll plugins. The down side is that you have to create the *tag*.md manually under the tag folder. There are way to autogenerate these tag.md as described on qian's blog. But that involves python run on local machine. I want this to be as self contained as possible. So everything should be done inside the browser.
 
 It is not that convinient, but there is not that much tags needs to be created. So manually create them is not that big of deal in the beginning. Maybe I can do it more efficiently when I learn more about Jekyll and Github page.
+
+# Tags
+
+for tags, it is case sensitive and if there is space, try to replace it with - (hyphen)
 
 Keep learning...
