@@ -11,10 +11,7 @@ tags:
 ## How to find the number of bytes per row
 ``` tsql
 -- This query will return which table uses the most space and start from there
-<<<<<<< HEAD
 --  In some case, this query is faster than the select COUNT(*) from *TABLE_NAME*
-=======
->>>>>>> 93e9ded5c40fae3b97e8a648a275734ac0a21574
 select 
     o.name, 
     max(s.row_count) AS 'Rows',
