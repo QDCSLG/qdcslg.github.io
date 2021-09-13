@@ -9,7 +9,8 @@ tags:
 # Collection of some SQL script
 
 ``` tsql
---This query will return which table uses the most space and start from there
+-- This query will return which table uses the most space and start from there
+--  In some case, this query is faster than the select COUNT(*) from *TABLE_NAME*
 select 
     o.name, 
     max(s.row_count) AS 'Rows',
