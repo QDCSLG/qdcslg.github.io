@@ -1,3 +1,11 @@
+---
+layout: post
+title: Some useful SQL scripts
+description: A collection of SQL scripts.
+tags: 
+- sql
+- database
+---
 # Collection of some SQL script
 
 ``` tsql
