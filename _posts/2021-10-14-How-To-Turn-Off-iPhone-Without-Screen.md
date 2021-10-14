@@ -8,7 +8,7 @@ tags:
 
 Typically, the iPhone can be powered off by holding the power button and volumn up button. Then you can slide the bar on the screen to power it off.
 
-But what if the screen is freezing unresponsive. 
+But what if the screen is freezing unresponsive. If you keep holding power button and volum up button, instead of power off the phone, it is going to send emergency SMS to some number. Thuat is not what you want.
 
 Here is what you can do:
 
