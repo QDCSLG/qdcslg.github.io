@@ -22,10 +22,26 @@ So I started my `cheatengine`
 - make one move, now the number of move is 31
 - next scan 31
 - after few time, you will be able to see 3~4 address show up
-  - start with 16
-  - start with 24
-  - start with 27
-  - start with 2A
+  - start with 1*
+  - start with 2*
+  - start with 2*
+  - start with 2*
 - Freeze the value of these addresses, the game will not reduce the number of moves when you make a move.
 
 This way, there is unlimited number of moves for the game. You can crush more candies without worring about our of move.
+
+Update:
+
+The steps described above definitly works. But the address will change slightly for each new game. These steps need to be repeated for each new game. It is not convienient at all.
+
+For each of the address discoved by the previous step, right click the address then select `Find out who writes to this address`, By doing so, cheat engine will attach a debugger to the application.
+Then go back to the game and make 1 move. There should be an address of the instruction displayed in the debugger.
+Here is a list of example addresses:
+- 00B4BD5A
+- 00DCB670
+- 00E8AF96
+- 00DC9F3B
+
+Among all addresses, `00B4BD5A` seems the one which actually contains the instruction to reduce the number of moves after each move.
+
+Replace with NOP instruction, then any move will not reduce the number of move. and it is consistent game after game.
