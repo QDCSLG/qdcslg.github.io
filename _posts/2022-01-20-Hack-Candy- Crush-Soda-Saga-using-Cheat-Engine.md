@@ -44,4 +44,16 @@ Here is a list of example addresses:
 
 Among all addresses, `00B4BD5A` seems the one which actually contains the instruction to reduce the number of moves after each move.
 
-Replace with NOP instruction, then any move will not reduce the number of move. and it is consistent game after game.
+The original code at that address is 
+```
+mov [edi+38],esi
+```
+It seems like the code is trying to move the value in register to another value. 
+
+- mov
+ - The mov instruction copies the data item referred to by its second operand (i.e. register contents, memory contents, or a constant value) into the location referred to by its first operand (i.e. a register or memory). While register-to-register moves are possible, direct memory-to-memory moves are not. In cases where memory transfers are desired, the source memory contents must first be loaded into a register, then can be stored to the destination memory address.
+
+
+
+Replace with `NOP` instruction, then any move will not reduce the number of move. and it is consistent game after game.
+
