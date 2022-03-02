@@ -36,4 +36,5 @@ These steps fix the problem:
     sudo resize2fs /dev/sda1
     ```
     (***No space between sda and 1 here!***)
+    
 Now your Ubuntu drive is 128 GB.
