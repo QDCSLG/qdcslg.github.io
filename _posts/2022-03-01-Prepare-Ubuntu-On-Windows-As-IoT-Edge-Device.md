@@ -66,4 +66,64 @@ Sometime you don't want to connect to the VM using Hyper-V, instead tools like P
  ```
  sudo ufw allow ssh
  ```
- 
+
+- Register IoT edge device on IoT hub
+  - get the connection string information, it will be needed in later step
+- Install on IoT Edge device
+  - Ubuntu 20.04
+``` bash
+wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+rm packages-microsoft-prod.deb
+```
+- Install a container engine
+``` bash
+sudo apt-get update; \
+  sudo apt-get install moby-engine
+```
+- Install IoT Edge runtime
+``` bash
+sudo apt-get update; \
+  sudo apt-get install aziot-edge
+```
+  - to list other versions of IoT Edge and the IoT identity service that are avialble, use the following command
+  ``` bash
+  apt list -a aziot-edge aziot-identity-service
+  ```
+
+  - Provision the device with its cloud identity
+  ``` bash
+    sudo iotedge config mp --connection-string 'PASTE_DEVICE_CONNECTION_STRING_HERE'
+  sudo iotedge config apply
+  ```
+
+  If you want to see the configuration file, you can open it 
+  ``` bash
+  sudo nano /etc/aziot/config.toml
+  ```
+
+
+  ## Verify successful configuration
+
+  - Check to see that the IoT Edge system service is running.
+
+``` bash
+sudo iotedge system status
+```
+A successful status response is `ok`
+ - Check the service logs
+ ``` bash
+ sudo iotedge system logs
+ ```
+ - use the `check` tool to verify configuration and connection status of the device
+ ```bash
+ sudo iotedge check
+ ```
+
+ - view all modules running on the edge device.
+   - When the service starts for the first time, you should only see the `edgeAgent` module running. The edgeAgent modules runs by default and helps to install and start any additional moduels that you deploy to your devicec
+   ``` bash
+   sudo iotedge list
+   ```
+
+   When you create a new IoT edge device, it will display the status code `417 -- The device's deployment configuration is not set` in the Azure portal. This status is normal, and means that the device is ready to receive a moduel deployment.
